@@ -1,0 +1,40 @@
+{
+  "output_base_dir": "C:/LocustData",
+  "duration_seconds": 60,
+  "frame_rate_fps": 10,
+  "exposure_us": 10000,
+  "jpeg_quality": 95,
+  "frames_per_h5": 1000,
+  "crop": {
+    "mode": "none",
+    "x": 0,
+    "y": 0,
+    "width": 2000,
+    "height": 1500,
+    "n_points": 8,
+    "buffer_factor": 1.1
+  },
+  "rclone": {
+    "executable": "rclone",
+    "destination": "myremote:locust-data",
+    "transfers": 4
+  },
+  "notifications": {
+    "providers": ["signal_cli", "whatsapp_cloud", "telegram"],
+    "signal_cli": {
+      "executable": "signal-cli",
+      "account": "+491234567890",
+      "recipient": "+499876543210"
+    },
+    "whatsapp_cloud": {
+      "access_token_env": "WHATSAPP_ACCESS_TOKEN",
+      "phone_number_id": "YOUR_META_PHONE_NUMBER_ID",
+      "recipient": "491234567890",
+      "graph_api_version": "vXX.X"
+    },
+    "telegram": {
+      "bot_token_env": "TELEGRAM_BOT_TOKEN",
+      "chat_id_env": "TELEGRAM_CHAT_ID"
+    }
+  }
+}
